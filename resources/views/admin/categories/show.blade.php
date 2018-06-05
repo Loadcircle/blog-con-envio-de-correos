@@ -6,12 +6,13 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="card">
                     <div class="card-heading">
-                        Ver Etiqueta
+                        Ver Categoría
                     </div>
 
                     <div class="card-body">
-                        <p><strong>Nombre</strong> {{ $tag->name }}</p>
-                        <p><strong>Slug</strong> {{ $tag->slug }}</p>
+                        <p><strong>Nombre</strong>      {{ $category->name }}</p>
+                        <p><strong>Slug</strong>        {{ $category->slug }}</p>
+                        <p><strong>Contenido</strong>   {{ $category->body }}</p>
                     </div>
                 </div>
             </div>

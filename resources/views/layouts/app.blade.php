@@ -16,7 +16,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -69,10 +70,37 @@
                 </div>
             </div>
         </nav>
+        @if(session('info'))
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="alert alert-success">
+                            {{ session('info') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
 
+        @if(count($errors))
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>                                    
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif        
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    @yield('scripts')
 </body>
 </html>

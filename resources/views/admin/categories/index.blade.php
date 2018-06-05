@@ -6,8 +6,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="card">
                     <div class="card-heading">
-                        Lista de Etiquetas
-                        <a href="{{ route('tags.create') }}" class="btn btn-sm btn-primary float-right">Crear</a>
+                        Lista de Categorías
+                        <a href="{{ route('categories.create') }}" class="btn btn-sm btn-primary float-right">Crear</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-hover">
@@ -19,18 +19,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($tags as $tag)
+                                @foreach($categories as $category)
                                 <tr>
-                                    <td>{{ $tag->id }}</td>
-                                    <td>{{ $tag->name }}</td>
+                                    <td>{{ $category->id }}</td>
+                                    <td>{{ $category->name }}</td>
                                     <td width="10px">
-                                        <a href="{{ route('tags.show', $tag->id) }}" class="btn btn-sm btn-default">Ver</a>
+                                        <a href="{{ route('categories.show', $category->id) }}" class="btn btn-sm btn-default">Ver</a>
                                     </td>
                                     <td width="10px">
-                                        <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-sm btn-default">Editar</a>
+                                        <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-sm btn-default">Editar</a>
                                     </td>
                                     <td width="10px">
-                                        {!! Form::open(['route'=>['tags.destroy', $tag->id], 'method'=>'DELETE']) !!}
+                                        {!! Form::open(['route'=>['categories.destroy', $category->id], 'method'=>'DELETE']) !!}
                                             <button class="btn btn-sm btn-danger">
                                                 Eliminar
                                             </button>
@@ -40,7 +40,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $tags->render() }}
+                        {{ $categories->render() }}
                     </div>
                 </div>
             </div>

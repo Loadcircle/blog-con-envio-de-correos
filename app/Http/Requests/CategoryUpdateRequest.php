@@ -4,7 +4,7 @@ namespace Blogs\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TagUpdateRequest extends FormRequest
+class CategoryUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,7 @@ class TagUpdateRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'slug' => 'required|unique:tags,slug,' .$this->tag, //
+            'slug' => 'required|unique:categories,slug,' .$this->category, //
         ];
     }
 }
