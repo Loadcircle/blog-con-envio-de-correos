@@ -48,7 +48,7 @@ class CategoryController extends Controller
         $category = Category::create($request->all()); //esto retorna contenido masivo, pero en el modulo Category ya estamos verificando que solo pase el name y el slug
 
         return redirect()->route('categories.edit', $category->id)
-            ->with('info', 'Etiqueta creada con éxito');
+            ->with('info', 'Categoría creada con éxito');
     }
 
     /**

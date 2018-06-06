@@ -2,6 +2,9 @@
 
 namespace Blogs\Providers;
 
+use Blogs\Post;
+use Blogs\Policies\PostPolicy;
+
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -13,7 +16,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'Blogs\Model' => 'Blogs\Policies\ModelPolicy',
+       // 'Blogs\Model' => 'Blogs\Policies\ModelPolicy', esta ya no es necesaria
+        Post::class   => PostPolicy::class
     ];
 
     /**
