@@ -37,4 +37,8 @@ class PageController extends Controller
         
         return view('web.post', compact('post'));
     }
+
+    public function contacto(){
+        return view('web.contacto');
+    }
 }
