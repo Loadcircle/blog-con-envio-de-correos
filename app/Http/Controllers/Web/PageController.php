@@ -4,7 +4,8 @@ namespace Blogs\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 use Blogs\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Mail;
+use Blogs\Mail\sendMail;
 use Blogs\Post;
 use Blogs\Category;
 
@@ -40,5 +41,9 @@ class PageController extends Controller
 
     public function contacto(){
         return view('web.contacto');
+    }
+
+    public function enviar(Request $request){
+        Mail::to('jesusmilano96@gmail.com')->send(new sendMail($request->nombre, $request->apellido, $request->email, $request->telefono, $request->mensaje));
     }
 }

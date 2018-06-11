@@ -23,6 +23,7 @@ Route::get('tag/{slug}',        'Web\PageController@tag')->name('tag');
 
 //contacto
 Route::get('contacto', 'Web\PageController@contacto')->name('contacto');
+Route::post('enviar', 'Web\PageController@enviar')->name('enviar');
 
 //admin
 Route::resource('tags',         'Admin\TagController');

@@ -28,6 +28,8 @@ class sendMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('email.enviar')
+            ->subject($this->subject)
+            ->from('jesusmilano96@gmail.com'); //prob no necesario 
     }
 }
